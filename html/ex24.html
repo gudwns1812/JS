@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>시멘틱 태그</title>
+    <!-- Semantic 의미론적 -->
+    <!-- 웹페이지의 공통적인 공간 구성요소를 태그형식으로 분류한 것 -->
+    <!-- 공통적인 구성요소: 헤더, 푸터, 메인, 사이드, 네비게이션바  -->
+    <!-- div태그와 기능적으로 똑같다 -->
+    <!-- header 태그: 상단공간(헤더) -->
+    <!-- nav 태그: 네비게이션(메뉴) -->
+    <!-- main 태그: 주 콘텐츠 공간 -->
+    <!-- section: 주된 컨텐츠 -->
+    <!-- aside: 사이드(왼쪽,오른쪽) 공간 -->
+     <style>
+        * {
+            border: 1px solid red;
+        }
+        ul,li {
+            display: inline;
+        }
+        section {
+            float: right;
+            width: 80%;
+        }
+        aside {
+            float: left;
+            width: 18%;
+        }
+        footer {
+            clear: both;
+        }
+     </style>
+  </head>
+  <body>
+    <header>헤더영역</header>
+    <nav>
+    <ul>
+        <li><a href="#">메뉴1</a></li>
+        <li><a href="#">메뉴2</a></li>
+        <li><a href="#">메뉴3</a></li>
+    </ul>
+    </nav>
+    <main>
+        <section>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi sequi
+                eum in, ullam ea commodi quos accusantium iure voluptas eaque
+                recusandae corporis consectetur distinctio incidunt velit. Praesentium
+                veniam nesciunt iste!
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi sequi
+                eum in, ullam ea commodi quos accusantium iure voluptas eaque
+                recusandae corporis consectetur distinctio incidunt velit. Praesentium
+                veniam nesciunt iste!
+            </p>
+        </section>
+        <aside>
+            <ul>
+                <li><a href="#">메뉴1</a></li>
+                <li><a href="#">메뉴2</a></li>
+                <li><a href="#">메뉴3</a></li>
+            </ul>
+        </aside>
+    </main>
+    <footer>푸터 영역</footer>
+  </body>
+</html>
