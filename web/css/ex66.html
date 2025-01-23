@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>변형 속성 - transform 속성</title>
+    <!-- 크기, 각도 등이 변형되는 것 -->
+    <!-- 2차원(XY평면), 3차원(XYZ평면) -->
+    <!-- 2차원 좌표계 : Left-Top이 원점 -->
+    <!-- 3차원 좌표계 : Z축 + 2차원 -->
+     <!-- rotate(각도값) : 회전-->
+      <!-- translate(x,y) : x,y좌표로 이동 -->
+       <!--  translate(x) : x좌표만 이동 -->
+        <!-- scale(x,y) : 크기 원래값 1, 2이면 2배 -->
+         <!-- skew(x,y) : 기울이기 -->
+          <!-- skewX(x) : x축방향으로 기울이기-->
+           <!-- transform-origin : 앵커값 -->
+        <style>
+            section {
+                width: 100px;
+                height: 100px;
+                border: 10px solid black;
+            }
+            div {
+                width: 100px;
+                height: 100px;
+                background-color: red;
+
+                transform: rotate(45deg);
+                transform-origin: left bottom;
+            }
+        </style>
+  </head>
+  <body>
+    <section>
+        <div></div>
+    </section>
+  </body>
+</html>

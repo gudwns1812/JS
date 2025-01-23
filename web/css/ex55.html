@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>연습문제- flex로 시멘틱 태그만들기</title>
+  <style>
+    * { margin: 0; padding: 0; }
+    #wrap {
+      /* 고정너비 */
+       /* width: 1000px;  */
+      /* 가변너비 */
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 400px;
+      /* 최소너비 */
+      min-width: 760px;
+      /* 최대너비 */
+      max-width: 1080px;
+      text-align: center;
+      /*      상하 좌우:여백균등하게 */
+      margin: 0 auto;
+      
+    }
+    body {
+      padding: 20px;
+    }
+    .box {
+      border: 1px solid black;
+      color: white;
+      background-color: gray;
+      font-size: 22px;
+
+
+    }
+    #header {
+        align-content: center;
+        background-color: blueviolet;
+        flex-grow: 1;
+    }
+    #nav {
+        align-content: center;
+        background-color: green;
+        flex-grow: 1;
+    }
+    #main {
+        display: flex;
+        flex-grow: 11;
+        align-content: stretch;
+    }
+    #aside {
+        background-color: rgb(162, 162, 46);
+        justify-content: right;
+        flex-grow: 1;
+        align-content: center;
+    }
+    #section {
+        background-color: blue;
+        flex-grow: 2;
+        align-content: center;
+    }
+    #footer {
+        background-color: darkgreen;
+        flex-grow: 1;
+        align-content: center;
+    }
+   
+  </style>
+</head>
+<body>
+  <div id="wrap">
+    <div class="box" id="header">Header</div>
+    <div class="box" id="nav">Nav</div>
+    <div class="box" id="main">
+      <div class="box" id="section">Section</div>
+      <div class="box" id="aside">Aside</div>
+    </div>
+    <div class="box" id="footer">Footer</div>
+  </div>
+</body>
+</html>

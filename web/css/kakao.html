@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      blockquote,
+      body,
+      button,
+      code,
+      dd,
+      div,
+      dl,
+      dt,
+      fieldset,
+      form,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      input,
+      legend,
+      li,
+      ol,
+      p,
+      pre,
+      select,
+      td,
+      textarea,
+      th,
+      ul {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        line-height: 1.5;
+        font-weight: 400;
+        color: #333;
+      }
+      button {
+        border: 0;
+        background-color: transparent;
+        cursor: pointer;
+        vertical-align: middle;
+      }
+      address,
+      button[type="submit"],
+      caption,
+      cite,
+      code,
+      dfn,
+      em,
+      input[type="submit"],
+      var {
+        font-style: normal;
+        font-weight: 400;
+      }
+      button,
+      input,
+      select,
+      textarea {
+        vertical-align: middle;
+      }
+      .logo_kakao {
+        display: block;
+        width: 88px;
+        height: 27px;
+        margin: 0 auto;
+        background: #fff url(logo_kakao.png) no-repeat 0 0;
+        background-size: 100px 80px;
+        font-size: 19px;
+        line-height: 27px;
+        text-align: center;
+      }
+      .doc_title {
+        padding-top: 50px;
+      }
+      #mainContent {
+        position: relative;
+        width: 580px;
+        height: 100%;
+        min-height: 480px;
+        margin: 40px auto 30px;
+        padding: 0 69px;
+        border: 1px solid rgba(0, 0, 0, 0.12);
+        box-sizing: border-box;
+      }
+      .cont_login {
+        position: relative;
+        height: 100%;
+        padding: 55px 0 50px;
+        box-sizing: border-box;
+      }
+      .item_form {
+        margin-top: 4px;
+        padding-bottom: 3px;
+      }
+      .box_tf {
+        position: relative;
+        border: solid #ccc;
+        border-width: 0 0 2px;
+      }
+      .box_tf .tf_g {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        min-height: 45px;
+        padding: 10px 0 8px;
+        border: 0;
+        font-size: 18px;
+        line-height: 25px;
+        color: #191919;
+        background-color: transparent;
+        letter-spacing: 0;
+        box-sizing: border-box;
+        outline: 0 none;
+        caret-color: #191919;
+        opacity: 1;
+      }
+      .screen_out {
+        position: absolute;
+        width: 0px;
+        height: 0px;
+      }
+      .ir_caption, .screen_out {
+        overflow: hidden;
+        line-height: 0;
+        text-indent: -9999px;
+      }
+      .set_login {
+        margin-top: 25px;
+      }
+      .item_choice {
+        position: relative;
+        display: block;
+        vertical-align: top;
+        float: left;
+        padding-right: 0px;
+      }
+      .BoxLayout_root__Ya1Da .set_login .item_choice .inp_choice {
+        box-sizing: border-box;
+        right: 24px;
+        width: auto;
+      }
+      .item_choice .inp_choice {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+        cursor: pointer;
+        appearance: none;
+        background: none;
+      }
+      .lab_choice {
+        float: left;
+        font-size: 14px;
+        line-height: 20px;
+        color: #666;
+        display: block;
+        position: relative;
+        padding-left: 28px;
+        cursor: pointer;
+      }
+      .lab_choice .ico_check {
+        margin: 0 8px 0 0;
+        background-position: 0 0;
+      }
+      .item_choice .lab_choice .ico_comm {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        height: 20px;
+      }
+      .ico_account,
+      .ico_comm {
+        display: inline-block;
+        overflow: hidden;
+        font-size: 1px;
+        line-height: 0;
+        color: transparent;
+        vertical-align: top;
+      }
+      .ico_comm {
+        background: url(ico_comm.png) 0 0 no-repeat;
+        background-size: 300px auto;
+      }
+      .item_choice .btn_help {
+        float: left;
+        margin: 1px 0 0 6px;
+      }
+      .item_choice .ico_help {
+        width: 18px;
+        height: 18px;
+        background-position: -120px -110px;
+        display: block;
+      }
+      .ico_help {
+        display: block;
+      }
+      .confirm_btn {
+        padding-top: 40px;
+        text-align: center;
+      }
+      .btn_g.highlight {
+        background-color: #fee500;
+      }
+      .btn_g {
+        display: block;
+        width: 100%;
+        height: 50px;
+        border-radius: 4px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 51px;
+        color: #191919;
+        background-color: #f0f0f0;
+      }
+      .line_or {
+        position: relative;
+        display: block;
+        width: 100%;
+        padding: 15px 0;
+        font-size: 0;
+        line-height: 0;
+      }
+      .line_or::before {
+        display: inline-block;
+        width: calc(50% - 20px);
+        height: 1px;
+        margin: 8px 0;
+        background-color: rgba(0, 0, 0, 0.06);
+        vertical-align: top;
+        content: "";
+      }
+      .line_or::after {
+        display: inline-block;
+        width: calc(50% - 20px);
+        height: 1px;
+        margin: 8px 0;
+        background-color: rgba(0, 0, 0, 0.06);
+        vertical-align: top;
+        content: "";
+      }
+      .txt_or {
+        display: inline-block;
+        width: 40px;
+        font-size: 12px;
+        line-height: 18px;
+        text-align: center;
+        color: #828282;
+      }
+      .info_user {
+        margin-top: 26px;
+      }
+      .info_user .link_join {
+        float: left;
+        font-size: 12px;
+      }
+      .cont_login a {
+        color: #191919;
+        cursor: pointer;
+        text-decoration: none;
+      }
+      .info_user .list_user {
+        float: right;
+      }
+      .list_user li {
+        float: left;
+      }
+      .list_user .link_user {
+        float: left;
+        font-size: 12px;
+      }
+      dl, li, menu, ol, ul {
+        list-style: none;
+      }
+      .info_user .list_user li:before {
+        content: "";
+        float: left;
+        width: 1px;
+        height: 10px;
+        margin: 4px 10px;
+        background-color: rgba(0,0,0,.08);
+      }
+      .info_user::after {
+        display: block;
+        visibility: hidden;
+        height: 0;
+        font-size: 0;
+        clear: both;
+        content: "";
+      }
+      .doc-footer.kc_footer {
+        padding-top: 0;
+      }
+      .doc-footer.kc_footer {
+        /* padding: 90px 0 40px; */
+        border-top: 0;
+        font-size: 0;
+        text-align: center;
+        white-space: nowrap;
+      }
+      .doc-footer {
+        display: block;
+        padding-bottom: 40px;
+        text-align: center;
+        white-space: nowrap;
+      }
+      .kc_footer .kc_group_service {
+        display: inline-block;
+        margin-left: -12px;
+        font-size: 0;
+        vertical-align: top;
+      }
+      .kc_footer .kc_group_service~.kc_group_service {
+        margin-left: 0;
+      }
+      .kc_footer .kc_group_service~.kc_group_service .kc_link_service:before, .kc_footer.kc_status_log .kc_item_select:before {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 1px;
+        height: 14px;
+        background-color: rgba(0,0,0,.14);
+        transform: translateY(-50%);
+        content: "";
+      }
+      .kc_footer .kc_item_select, .kc_footer .kc_link_service {
+        display: inline-block;
+        vertical-align: top;
+      }
+      .kc_footer .kc_link_service {
+        position: relative;
+        padding: 10px 12px;
+        font-size: 13px;
+        line-height: 17px;
+        color: #666;
+        letter-spacing: -.1px;
+      }
+      .kc_item_select {
+        position: relative;
+      }
+      .kc_item_select .kc_btn_selected {
+        display: block;
+        padding: 10px 12px;
+        font-size: 13px;
+        line-height: 17px;
+        letter-spacing: -.1px;
+        color: #666;
+      }
+      .kc_item_select .kc_btn_selected .kc_ico_arrow {
+        width: 12px;
+        height: 12px;
+        margin: 2px 0 0 4px;
+        background-position: -150px -90px;
+        
+      }
+      .kc_ico_arrow {
+            width: 14px;
+        height: 14px;
+        background-position: -80px -60px;
+      }
+      .ico-comm, .kc_ico_comm {
+        display: inline-block;
+        overflow: hidden;
+        font-size: 0;
+        line-height: 0;
+        background-image: url(kc_ico_comm_241015_v1.svg);
+        background-repeat: no-repeat;
+        text-indent: -9999px;
+        vertical-align: top;
+      }
+      .kc_item_select .kc_list_option {
+        display: none;
+        overflow: hidden;
+        overflow-y: auto;
+        position: absolute;
+        left: -2px;
+        bottom: 30px;
+        min-width: 80px;
+        max-height: 100px;
+        padding: 7px 0;
+        border-radius: 4px;
+        border: 1px solid rgba(0,0,0,.1);
+        background-color: #fff;
+        text-align: left;
+        box-sizing: border-box;
+        box-shadow: 0 1px 2px rgba(0,0,0,.04);
+      }
+      .kc_select_open .kc_btn_selected .kc_ico_arrow {
+        transform: rotate(-180deg);
+      }
+      .kc_item_select .kc_list_option li {
+        height: 28px;
+      }
+      .kc_item_select .kc_link_option[aria-selected=true] {
+        font-weight: 700;
+        background-color: rgba(44,136,222,.06);
+      }
+      .kc_item_select .kc_link_option {
+        display: block;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        padding: 0 12px;
+        line-height: 28px;
+        color: #191919;
+        background-color: #fff;
+        text-align: left;
+      }
+      .kc_footer .kc_link_copy {
+        margin-top: -10px;
+        padding: 10px 0 10px 4px;
+        letter-spacing: -.1px;
+      }
+      .kc_footer .kc_link_copy, .kc_footer .kc_txt_copy {
+        display: inline-block;
+        color: #666;
+        vertical-align: top;
+      }
+      .kc_footer .kc_link_copy, .kc_footer .kc_txt_copy {
+        padding: 10px 0 0 12px;
+        font-size: 13px;
+        line-height: 17px;
+      }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          const itemSelect = document.querySelector('.kc_item_select');
+          const btnSelected = document.querySelector('.kc_btn_selected');
+          const listOption = document.querySelector('.kc_list_option');
+      
+          btnSelected.addEventListener('click', function (event) {
+            event.stopPropagation();  // 다른 클릭 이벤트 방지
+            const isOpen = itemSelect.classList.contains('kc_select_open');
+      
+            // kc_select_open 클래스 토글
+            if (isOpen) {
+              itemSelect.classList.remove('kc_select_open');
+              btnSelected.setAttribute('aria-expanded', 'false');
+              listOption.style.display = 'none';
+            } else {
+              itemSelect.classList.add('kc_select_open');
+              btnSelected.setAttribute('aria-expanded', 'true');
+              listOption.style.display = 'block';
+            }
+          });
+      
+          // 바깥 영역 클릭 시 닫기
+          document.addEventListener('click', function () {
+            itemSelect.classList.remove('kc_select_open');
+            btnSelected.setAttribute('aria-expanded', 'false');
+            listOption.style.display = 'none';
+          });
+        });
+      </script>
+      
+      
+  </head>
+  <body>
+    <main>
+      <div class="doc_title">
+        <span class="logo_kakao"></span>
+      </div>
+      <article id="mainContent">
+        <div class="cont_login">
+          <div class="login">
+            <form>
+              <div class="item_form fst">
+                <div class="box_tf">
+                  <label class="screen_out" for="loginId--1"
+                    >계정정보 입력</label
+                  ><input
+                    placeholder="카카오메일 아이디, 이메일, 전화번호 "
+                    type="text"
+                    id="loginId--1"
+                    name="loginId"
+                    class="tf_g"
+                    value=""
+                  />
+                  <div class="util_tf"></div>
+                </div>
+              </div>
+              <div class="item_form">
+                <div class="box_tf">
+                  <label class="screen_out" for="password--2"
+                    >비밀번호 입력</label
+                  ><input
+                    placeholder="비밀번호"
+                    autocomplete="off"
+                    type="password"
+                    id="password--2"
+                    name="password"
+                    class="tf_g"
+                    value=""
+                  />
+                  <div class="util_tf"></div>
+                </div>
+              </div>
+              <div class="set_login">
+                <div class="item_choice">
+                  <span
+                    ><input
+                      type="checkbox"
+                      id="saveSignedIn--4"
+                      class="inp_choice"
+                      name="saveSignedIn"
+                      value="false"
+                    /><label
+                      class="lab_choice"
+                      for="saveSignedIn--4"
+                      id="label-saveSignedIn"
+                      ><span class="ico_comm ico_check"></span>간편로그인 정보
+                      저장</label
+                    ></span
+                  ><button
+                    type="button"
+                    class="btn_help"
+                    aria-describedby="label-saveSignedIn"
+                    aria-expanded="false"
+                  >
+                    <span class="ico_comm ico_help">도움말 보기</span>
+                  </button>
+                </div>
+              </div>
+              <div class="confirm_btn">
+                <button type="submit" class="btn_g highlight submit">
+                  로그인</button
+                ><span class="line_or">
+                  ::before
+                  <span class="txt_or">또는</span>
+                  ::after </span
+                ><button type="button" class="btn_g">QR코드 로그인</button>
+              </div>
+            </form>
+            <div class="info_user">
+              <a
+                href="/weblogin/create_account?continue=https%3A%2F%2Fwww.daum.net&amp;lang=ko&amp;showHeader=false"
+                class="link_join"
+                >회원가입</a
+              >
+              <ul class="list_user">
+                <li>
+                  <a
+                    href="/weblogin/find_account?continue=https%3A%2F%2Fwww.daum.net&amp;lang=ko&amp;showHeader=false"
+                    class="link_user"
+                    >계정 찾기</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="/weblogin/find_password?continue=%2Flogin%3Fcontinue%3Dhttps%253A%252F%252Fwww.daum.net&amp;lang=ko&amp;showHeader=false"
+                    class="link_user"
+                    >비밀번호 찾기</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div></div>
+          </div>
+        </div>
+      </article>
+    </main>
+    <footer class="doc-footer kc_footer">
+      <strong class="screen_out">서비스 이용정보</strong>
+      <div class="kc_group_service">
+        <div class="kc_item_select">
+          <label id="selectLang" class="screen_out">언어 선택상자</label
+          ><button
+            class="kc_btn_selected"
+            role="combobox"
+            aria-controls="listLang"
+            aria-labelledby="selectLang"
+            aria-haspopup="listbox"
+            aria-expanded="false"
+            aria-activedescendant="langKO"
+            tabindex="0"
+          >
+            한국어<span class="kc_ico_comm kc_ico_arrow"></span>
+          </button>
+          <ul
+            id="listLang"
+            class="kc_list_option"
+            role="listbox"
+            aria-labelledby="selectLang"
+          >
+            <li role="presentation">
+              <button
+                type="button"
+                id="langKO"
+                class="kc_link_option"
+                role="option"
+                aria-selected="true"
+              >
+                한국어
+              </button>
+            </li>
+            <li role="presentation">
+              <button
+                type="button"
+                id="langEN"
+                class="kc_link_option"
+                role="option"
+                aria-selected="false"
+              >
+                English
+              </button>
+            </li>
+            <li role="presentation">
+              <button
+                type="button"
+                id="langJA"
+                class="kc_link_option"
+                role="option"
+                aria-selected="false"
+              >
+                日本語
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="kc_group_service">
+        <a
+          href="https://www.kakao.com/policy/terms?lang=ko"
+          class="kc_link_service"
+          target="_blank"
+          rel="noreferrer noopener"
+          >이용약관</a
+        ><a
+          href="https://www.kakao.com/policy/privacy?lang=ko"
+          class="kc_link_service"
+          target="_blank"
+          rel="noreferrer noopener"
+          ><strong>개인정보 처리방침</strong></a
+        ><a
+          href="https://cs.kakao.com/"
+          class="kc_link_service"
+          target="_blank"
+          rel="noreferrer noopener"
+          >고객센터</a
+        >
+      </div>
+      <small class="kc_txt_copy"
+        >©<a
+          href="http://kakaocorp.com/"
+          class="kc_link_copy"
+          target="_blank"
+          rel="noreferrer noopenner"
+          >Kakao Corp.</a
+        ></small
+      >
+    </footer>
+  </body>
+</html>

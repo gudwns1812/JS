@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>태그선택자와 id, class선택자 연결</title>
+    <style>
+        h1 {
+            color: skyblue;
+        }
+        .select {
+            color: brown;
+        }
+        .item {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="select">제목태그 h1</h1>
+    <h1>제목태그 H!</h1>
+    <ul>
+        <li class="select">아이템1</li>
+        <li class="item">아이템2</li>
+        <!-- 클래스 속성은 여러개 적용 가능 -->
+        <li class="select item">아이템3</li>
+    </ul>
+</body>
+</html>
